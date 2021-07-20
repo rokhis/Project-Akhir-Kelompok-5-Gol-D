@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1a954637-c6fa-4a41-9183-e75e865edf28">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tb_tanaman.`Kode_Tanaman` AS tb_tanaman_Kode_Tanaman,
+     tb_tanaman.`Nama` AS tb_tanaman_Nama,
+     tb_tanaman.`Jenis` AS tb_tanaman_Jenis,
+     tb_tanaman.`Tersedia` AS tb_tanaman_Tersedia,
+     tb_tanaman.`Harga` AS tb_tanaman_Harga
+FROM
+     `tb_tanaman` tb_tanaman]]>
+	</queryString>
+	<field name="tb_tanaman_Kode_Tanaman" class="java.lang.Integer"/>
+	<field name="tb_tanaman_Nama" class="java.lang.String"/>
+	<field name="tb_tanaman_Jenis" class="java.lang.String"/>
+	<field name="tb_tanaman_Tersedia" class="java.lang.Integer"/>
+	<field name="tb_tanaman_Harga" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement uuid="4804c21f-9289-4287-904c-85adae7ca92c" mode="Opaque" x="0" y="0" width="553" height="95" backcolor="#D4E4B2"/>
+				<staticText>
+					<reportElement uuid="28d1a822-61e4-424f-96e5-96a5837fa0ab" style="Title" x="96" y="0" width="370" height="66" forecolor="#000000" backcolor="#000000"/>
+					<textElement textAlignment="Center">
+						<font size="30" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Laporan Data Tanaman]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="2ebb3286-36ee-4c11-b599-802aa09d7059" style="SubTitle" x="157" y="47" width="249" height="29" forecolor="#000000"/>
+					<textElement textAlignment="Center">
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Pertanian Jaya Abadi]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="0f7d12fd-169e-4077-b15b-64a0456f246a" mode="Opaque" x="0" y="100" width="555" height="32" forecolor="#000000" backcolor="#333333"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="c5c518a3-488e-49ac-b799-4660785a39c5" x="307" y="12" width="246" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9c76ec31-1dd3-4875-bb84-0336bfbadcac" style="Column header" x="0" y="7" width="111" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[KODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d054996e-0c17-4156-80ff-7ce74efc5379" style="Column header" x="111" y="7" width="111" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[NAMA ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d5895372-1297-4a71-9bed-1c8ee3090821" style="Column header" x="222" y="7" width="111" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[JENIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9181ace4-40c1-4a44-aa7a-7e5b47f0b55a" style="Column header" x="333" y="7" width="111" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[TERSEDIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ac8eca15-b1c3-4ad2-a753-8b544a19992c" style="Column header" x="444" y="7" width="111" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement uuid="6ebf9428-eb5e-4c37-a157-d86ccb77a1f0" style="Row" mode="Opaque" x="0" y="0" width="555" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="f7100efe-699c-4c96-9349-4ed80f809ba5" style="Detail" positionType="Float" x="0" y="0" width="111" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_tanaman_Kode_Tanaman}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="4827b3e5-ef38-423e-8226-f0595087725c" style="Detail" positionType="Float" x="111" y="0" width="111" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_tanaman_Nama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="3bb0546a-3dff-4a6b-a56a-b26f076246cc" style="Detail" positionType="Float" x="222" y="0" width="111" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_tanaman_Jenis}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="386d9be9-d46f-4f9f-83ca-d3f503f0ff47" style="Detail" positionType="Float" x="333" y="0" width="111" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_tanaman_Tersedia}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="54b1bf5a-968b-4917-aad2-32bb76556214" style="Detail" positionType="Float" x="444" y="0" width="111" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_tanaman_Harga}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement uuid="2b49af55-190b-456a-907e-062a0c4b23ae" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="9c602ce4-1e6a-4b38-8703-8314215b3b1f" mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#333333"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="58892731-943f-41a9-84be-6d121ff9e9e8" style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="d636e42a-f59f-4a1c-b0eb-4384a31ebfab" style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="2fb51ac6-d00d-4ea1-afb9-40974f32058a" style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
